@@ -1,0 +1,588 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    height: 100vh;
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* REUSABLE */
+
+.text-center {
+	text-align: center;
+}
+
+.my-10 {
+    margin: 10px 0;
+}
+
+.my-20 {
+    margin: 20px 0;
+}
+
+.my-auto {
+    margin: 0 auto;
+}
+
+.lh-18 {
+    line-height: 1.8em;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+.font-small-8 {
+    font-size: 0.8em;
+}
+
+.wrapper-fit-centered {
+	width: fit-content;
+	margin: 0 auto;
+    overflow-x: auto;
+}
+
+.table-container {
+    max-width: 100%;
+    width: fit-content;
+    overflow-x: auto;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 1024px) {
+    .table-container {
+        max-width: 1000px;
+        max-height: 700px;
+        overflow: auto;
+        margin: 0 auto;
+        border: 1px solid #ccc; /* Optional: Add border for visualization */
+        resize: both; /* Optional: Allow resizing of the container */
+    }
+}
+@media screen and (min-width: 1920px) {
+    .table-container {
+        max-width: 100%;
+        max-height: 700px;
+        overflow: auto;
+        margin: 0 auto;
+        border: 1px solid #ccc; /* Optional: Add border for visualization */
+        resize: both; /* Optional: Allow resizing of the container */
+    }
+}
+
+/* MAIN CONTENT AREA */
+
+main {
+    background: #ddd;
+    color: #333;
+    width: 100vw;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+/* BUTTONS */
+
+/* .btn {
+    background: #0096FF;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    transition: all .5s;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    width: fit-content;
+	text-decoration: none;
+}
+
+.btn:hover {
+    background: #0047AB;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    transition: all .5s;
+} */
+
+.btn-full {
+    width: 100%;
+}
+
+/* MESSAGES */
+.success-msg {
+    color: green;
+}
+.error-msg {
+    color: red;
+}
+.available_chairs {
+    color: rgb(24, 151, 24);
+    font-weight: bold;
+}
+
+/* ADD USERS PAGE (users-add.php) */
+
+.users {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.users form {
+    width: 250px;
+    max-width: 100%;
+}
+
+.users form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.users form input[type="text"],
+.users form input[type="password"],
+.users form input[type="email"],
+.users form select,
+.users form input[type="date"], 
+.users form input[type="time"],
+.users form input[type="number"],
+.users form input[type="tel"]{
+    
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.users form input[type="file"] {
+    margin: 10px 0;
+}
+
+.users form input[type="submit"] {
+    border: none;
+    cursor: pointer;
+}
+
+.users .form-error {
+    color: red;
+    margin-top: 10px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #2b5977;
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+    font-size: 0.9em;
+    line-height: 50px;
+}
+
+/* LOGIN PAGE */
+
+.login-container {
+    background: #ddd;
+    height: 100vh;
+}
+
+.login {
+    width: fit-content;
+    height: fit-content;
+    margin: 0 auto;
+    margin-top: 150px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .login h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .login label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  .login input[type="text"],
+  .login input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+  }
+  
+  .login input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background: #0096FF;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .login input[type="submit"]:hover {
+    background: #0047AB;
+  }
+
+/* TABLES */
+
+.tbl-fit {
+    width: fit-content;
+    overflow: auto;
+    font-size: 0.9em;
+}
+
+.tbl-fit thead tr th {
+    padding: 15px;
+    border-bottom: 1px solid #998;
+}
+
+.tbl-fit tbody tr td {
+    padding: 15px;
+    border-bottom: 1px dotted #998;
+}
+
+.tbl-fit tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.users-table-buttons {
+    display: flex;
+}
+
+.users-table-buttons .btn {
+    margin: 0 5px;
+}
+
+/* Center the text in the "Image" column */
+td img {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Add some space around the image */
+td img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.table {
+    border-collapse: collapse;
+    /* font-size: 0.9em; */
+}
+
+.table th,
+.table td {
+    border: 1px solid #333;
+    padding: 8px;
+    white-space: nowrap;
+}
+
+.date-separator td {
+    border-top: 2px solid #333;
+    padding-top: 5px;
+}
+
+/* Add these styles to your existing CSS */
+
+.even-row {
+    background-color: #f2f2f2; /* Light gray background for even rows */
+}
+
+.odd-row {
+    background-color: #ffffff; /* White background for odd rows */
+}
+
+.sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 100; /* Ensure the header stays on top of other content */
+    background: #ddd;
+}
+
+
+/* Media Queries */
+
+@media all and (max-width:768px) {
+
+    /* MAIN CONTENT AREA */
+
+    .container {
+        width: 95vw;
+    }
+
+    .wrapper-fit-centered {
+        max-width: 100%;
+    }
+
+    /* tables */
+
+    .tbl-fit thead {
+        display: none;
+    }
+
+    .tbl-fit,
+    .tbl-fit tbody,
+    .tbl-fit tr,
+    .tbl-fit td {
+        display: block;
+        width: 100%;
+    }
+
+    .tbl-fit tr {
+        margin-bottom: 15px;
+    }
+
+    .tbl-fit tbody tr td {
+        text-align: right;
+        position: relative;
+    }
+
+    .tbl-fit tbody tr:last-child td {
+        border-bottom: 1px dotted #999;
+    }
+
+    .tbl-fit td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        padding-left: 15px;
+        text-align: left;
+    }
+}
+
+.side-by-side {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.side-by-side form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.side-by-side select {
+    width: 200px;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.side-by-side .btn {
+    height: 35px;
+}
+
+.side-by-side form input[type="date"] {
+    padding: 8px;
+    height: 35px;
+}
+
+@media all and (max-width:768px) { 
+    .login {
+        width: 90vw;
+    }
+
+    .wrapper-fit-centered {
+        width: 100%;
+    }
+    .side-by-side select {
+        width: 300px;
+    }
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip-content {
+    display: none;
+    visibility: hidden;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 200;
+    white-space: nowrap;
+  }
+  
+.tooltip-content {
+    visibility: visible;
+  }
+
+.booking {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    margin: 0 auto;
+    gap: 10px;
+}
+
+/* .booking form {
+    width: 250px;
+    max-width: 100%;
+} */
+
+.booking label {
+    display: block;
+    margin-bottom: 0;
+}
+
+.booking input[type="text"],
+.booking input[type="password"],
+.booking input[type="email"],
+.booking select,
+.booking input[type="date"], 
+.booking input[type="time"],
+.booking input[type="number"],
+.booking input[type="tel"],
+.booking textarea,
+.booking select {
+    
+    width: 250px;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 1em;
+}
+
+.booking input[type="file"] {
+    margin: 10px 0;
+}
+
+.booking input[type="submit"] {
+    border: none;
+    cursor: pointer;
+}
+
+  .messenger-check-col-container,
+  .food-ticket-check-col-container {
+      display: flex;
+      flex-direction: row;
+  }
+
+  .messenger-check {
+      display: flex;
+      flex-direction: column;
+      font-size: 0.9em;
+  }
+
+  .messenger-check div {
+      display: flex;
+      flex-direction: row;
+      padding: 3px;
+  }
+
+  .food-ticket-check-col-container {
+    font-size: 0.9em;
+  }
+
+  p.food {
+    font-size: 0.9em;
+    margin-bottom: 6px;
+  }
+
+  @media all and (max-width:768px) { 
+    .booking {
+        flex-direction: column;
+    }
+
+.booking input[type="text"],
+.booking input[type="password"],
+.booking input[type="email"],
+.booking select,
+.booking input[type="date"], 
+.booking input[type="time"],
+.booking input[type="number"],
+.booking input[type="tel"],
+.booking textarea,
+.booking select {
+    
+    width: 100%;
+}
+
+    #resetVoucherButton {
+        margin: 0 auto;
+    }
+}
+
+/* Add some space around the image */
+.user img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+#booking-filters input {
+    width: 100px;
+}
+#booking-filters select {
+    width: 100px;
+}
+
+@media all and (max-width:768px) { 
+    #booking-filters input {
+        width: 100%;
+    }
+    #booking-filters select {
+        width: 100%;
+    }
+}
+
+.cashier-entry {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+@media all and (max-width:768px) {
+
+    .cashier-entry {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .cashier-entry input,
+    .cashier-entry textarea,
+    .cashier-entry select,
+    .cashier-entry label {
+        width: 100% !important;
+        margin: 0;
+    }
+
+    .cashier-entry form {
+        border: 1px solid #333
+    }
+}

@@ -1,0 +1,479 @@
+/* External Resources */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Merriweather&display=swap');
+
+/* Reset Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Typography */
+
+h1,h2,h3,h4,h5,h6 {
+    text-align: center;
+    font-family: 'Merriweather', sans-serif;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+p {
+    line-height: 1.5em;
+    margin: 10px 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Buttons */
+
+.btn {
+    padding: 10px 15px;
+    background: #2266cc;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .3s;
+    display: block;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.btn:hover {
+    background: #2299ff;
+    transition: .3s;
+}
+
+.btn-trash {
+    border: 0;
+    color: #ff0000;
+    font-size: 1em;
+}
+
+.btn-save {
+    border: 0;
+    color: #2266cc;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+/* Form, Input */
+
+input[type=text],
+input[type=password],
+input[type=url],
+input[type=number],
+input[type=date],
+input[type=phone],
+input[type=email],
+select {
+    padding: 10px 15px;
+    outline: none;
+    border: 1px solid #ccc;
+    background: #fff;
+    margin-bottom: 10px;
+}
+
+input[type=hidden] {
+    margin: 0 !important;
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+    display: none !important;
+}
+
+
+.input-80 {
+    width: 80px;
+}
+
+td form {
+    outline: none;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    color: #444;
+}
+
+/* Messages */
+
+.msg {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.msg-success {
+    color: #008000;
+}
+
+.msg-error {
+    color: #ff0000;
+}
+
+/* Layout */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+}
+
+header {
+    font-family: 'Roboto Condensed', sans-serif;
+    line-height: 40px;
+    background: #333;
+    color: #fff;
+}
+
+main {
+    background: #eee;
+}
+
+footer {
+    font-family: 'Roboto Condensed', sans-serif;
+    line-height: 40px;
+    text-align: center;
+    background: #333;
+    color: #fff;
+}
+
+footer span {
+    color: #22ccff;
+}
+
+/* Top Navigation */
+
+nav a {
+    color: #fff !important;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+}
+
+nav #logo {
+    font-size: 1.4em;
+}
+
+nav #logo span {
+    color: #22ccff;
+}
+
+nav .toggle,
+nav [id^=sub] {
+    display: none;
+}
+
+nav ul a {
+    padding: 0 10px;
+    white-space: nowrap;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul {
+    display: flex;
+    background: #333;
+    list-style: none;
+    z-index: 300;
+}
+
+nav ul li {
+    position: relative;
+    transition: .3s;
+}
+
+nav ul li ul {
+    flex-direction: column;
+    position: absolute;
+    display: none;
+    min-width: 100%; /* Ensure the dropdown ul is at least as wide as the parent li */
+    max-width: fit-content; /* Allow it to grow beyond the parent li if the content is wider */
+    box-sizing: border-box; /* Include padding/border in the element's width */
+}
+
+nav ul li ul li {
+    width: 100%; /* Make sure the inner li elements also match the ul width */
+}
+
+nav ul li ul li ul {
+    top: 0;
+    left: 100%;
+}
+
+nav ul li:hover > ul {
+    display: flex;
+}
+
+nav ul li:hover {
+    background: #777;
+    transition: .3s;
+}
+
+nav ul li a::after {
+    font-family: 'FontAwesome';
+    content: '\f078';
+    font-size: .8em;
+    color: #22ccff;
+    padding-left: 5px;
+}
+
+nav ul li ul li a::after {
+    content: '\f054';
+}
+
+nav ul li a:only-child::after {
+    content: '';
+}
+
+/* Main Content Area */
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+}
+
+.wrapper {
+	width: fit-content;
+	margin: 0 auto;
+    overflow-x: auto;
+}
+
+/* Table Styles */
+
+.even-row {
+    background-color: #f2f2f2;
+}
+
+.odd-row {
+    background-color: #ffffff;
+}
+
+.sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #ddd;
+}
+
+#no-border {
+    border: 0px;
+}
+
+#actions {
+    display: flex;
+    gap: 10px;
+    border: none;
+}
+
+.bolder-line {
+    border-top: 2px solid #333; /* Change color as needed */
+}
+
+/* Login */
+
+.login form {
+    background: #fff;
+    border: 1px solid #d7d7d7;
+    box-shadow: 0 0 10px 0 #e1e1e1;
+    width: fit-content;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+.login h2 {
+    margin-top: 20px;
+}
+
+     .yanyana {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        gap: 10px
+    }
+    
+    .yanyana div {
+        width: 50% !important;
+    }
+    
+    .yanyana div input {
+        width: 90% !important;
+    }
+    
+    .dorddene {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .dorddene input[type=text] {
+        width: 50px;
+    }
+
+
+/* Media Queries */
+
+@media all and (max-width:768px) {
+
+    /* Top Navigation (Mob) */
+
+    nav {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    nav #logo {
+        padding-left: 10px;
+        flex-basis: 50%;
+    }
+
+    nav #hamburger {
+        flex-basis: 50%;
+        text-align: right;
+        padding-right: 10px;
+        font-size: 1.4em;
+    }
+
+    nav .toggle {
+        display: block;
+    }
+
+    nav [id^=sub]:checked + ul {
+        display: flex;
+    }
+
+    nav .toggle + a {
+        display: none;
+    }
+
+    nav ul {
+        flex-direction: column;
+        flex-basis: 100%;
+        background: #444;
+        display: none;
+    }
+
+    nav ul li ul {
+        position: static;
+    }
+
+    nav ul li:hover > ul {
+        display: none;
+    }
+
+    nav ul li label,
+    nav ul li a {
+        padding-left: 20px;
+        background: #555;
+        border-bottom: 1px dashed #999;
+    }
+
+    nav ul li ul li label,
+    nav ul li ul li a {
+        padding-left: 40px;
+        background: #666;
+    }
+
+    nav ul li ul li ul li label,
+    nav ul li ul li ul li a {
+        padding-left: 60px;
+        background: #777;
+    }
+
+    nav ul li label::after {
+        font-family: 'FontAwesome';
+        content: '\2b';
+        padding-left: 5px;
+        font-size: 0.8em;
+        color: #22ccff;
+    }
+
+    nav #icon {
+        transition: .3s;
+    }
+
+    nav .fa-bars {
+        transform: rotate(0deg);
+    }
+
+    nav .fa-times {
+        transform: rotate(90deg);
+    }
+
+    /* Main Content Area */
+
+    .container {
+        width: 90%;
+    }
+
+    /* Login Form */
+
+    .login form {
+        width: 90%;
+    }
+
+    .login form input {
+        width: 100%;
+    }
+
+    /* Form, Input */
+
+    input[type=text],
+    input[type=password],
+    select {
+        padding: 10px 15px;
+        outline: none;
+        border: 1px solid #ccc;
+        background: #fff;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+     .yanyana {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    .yanyana div {
+        width: 117px;
+    }
+}
+
+/* Hesabat */
+
+.filter-section {
+    display: none; /* Hide filter section by default */
+}
+
+/* .yanyana {
+    width: 250px;
+}
+
+.w130 {
+    width: 30px !important;
+}
+
+@media all and (max-width:768px) {
+    .yanyana {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .w130 {
+        width: 30px !important;
+    }
+} */
